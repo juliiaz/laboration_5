@@ -16,6 +16,7 @@ const fontSelect = document.querySelector("#font");
 const previewFullname = document.querySelector("#previewfullname");
 const previewEmail = document.querySelector("#previewemail");
 const previewPhone = document.querySelector("#previewphone");
+const card = document.querySelector(".card");
 
 const errorList = document.querySelector("#errorlist");
 const historySection = document.querySelector("#history");
@@ -56,8 +57,19 @@ function displayErrors() {
  */
 function createStudentCard() {
     // Hämta information från formuläret
+    const fullname = fullnameInput.value.trim();
+
+    const email = emailInput.value.trim();
+
+    const phone = phoneInput.value.trim();
+
+    const font = fontSelect.value;
 
     // Uppdatera studentkortet
+    previewFullname.textContent = fullname;
+    previewEmail.textContent = email;
+    previewPhone.textContent = phone;
+    card.style.fontFamily = font;
 
     // Lägg till studentkortet i historiken
 
@@ -120,6 +132,8 @@ form.addEventListener("submit", function(event) {
     event.preventDefault();
 
     console.log("Form submitted");
+
+    createStudentCard();
 });
 // - validera inmatningen
 // - skapa studentkort om valideringen lyckas
