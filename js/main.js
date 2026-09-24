@@ -118,7 +118,7 @@ function deleteHistory() {
 // När formuläret skickas:
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-    
+
     console.log("Form submitted");
 });
 // - validera inmatningen
@@ -127,9 +127,18 @@ form.addEventListener("submit", function(event) {
 
 
 // När användaren klickar på "Rensa"
+clearButton.addEventListener("click", function(){
+    clearForm();
 
+    console.log("Form cleared");
+});
 
 // När användaren klickar på "Radera historik"
+deleteHistoryButton.addEventListener("click", function(){
+    deleteHistory();
+
+    console.log("History deleted");
+});
 
 
 // När sidan laddas:
