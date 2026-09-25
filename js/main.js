@@ -50,7 +50,7 @@ function validateForm() {
     }
 
     // Visa eventuella felmeddelanden
-
+    displayErrors();
 
     
 
@@ -162,7 +162,9 @@ function deleteHistory() {
 form.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    console.log("Form submitted");
+    if (validateForm()){
+    createStudentCard();
+}
 
 });
 // - validera inmatningen
