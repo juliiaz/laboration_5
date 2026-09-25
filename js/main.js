@@ -103,8 +103,18 @@ function createStudentCard() {
     card.style.fontFamily = font;
 
     // Lägg till studentkortet i historiken
+    const studentCard = {
+        fullname: fullname,
+        email: email, 
+        phone: phone, 
+        font: font
+    };
+    
+    history.unshift(studentCard);
 
     // Spara och uppdatera historiken
+
+
 }
 
 
@@ -167,6 +177,7 @@ form.addEventListener("submit", function(event) {
 }
 
 });
+
 // - validera inmatningen
 // - skapa studentkort om valideringen lyckas
 
