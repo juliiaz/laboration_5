@@ -34,11 +34,33 @@ let history = [];
  * @returns {boolean}
  */
 function validateForm() {
+
+    errors = [];
     // Kontrollera formulärets obligatoriska fält
+    if (fullnameInput.value.trim() === ""){
+        errors.push("Du måste fylla i namn");
+    }
+
+    if (emailInput.value.trim() === ""){
+        errors.push("Du måste fylla i e-post");
+    }
+
+    if (phoneInput.value.trim() === ""){
+        errors.push("Du måste fylla i telefonnummer");
+    }
 
     // Visa eventuella felmeddelanden
 
+
+    
+
     // Returnera resultatet (true eller false) av valideringen
+      if (errors.length === 0){
+        return true;
+        } else {
+        return false;
+
+        }
 }
 
 
@@ -133,7 +155,6 @@ form.addEventListener("submit", function(event) {
 
     console.log("Form submitted");
 
-    createStudentCard();
 });
 // - validera inmatningen
 // - skapa studentkort om valideringen lyckas
