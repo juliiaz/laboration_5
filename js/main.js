@@ -131,8 +131,12 @@ function saveHistory() {
  */
 function loadHistory() {
     // Hämta eventuell sparad historik
+    const savedHistory = localStorage.getItem("history");
 
     // Uppdatera history
+     if (savedHistory){
+        history = JSON.parse(savedHistory);
+    }
 }
 
 
@@ -199,4 +203,6 @@ deleteHistoryButton.addEventListener("click", function(){
 
 
 // När sidan laddas:
+
 // - läs in och visa eventuell tidigare historik
+loadHistory();
