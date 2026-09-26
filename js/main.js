@@ -113,6 +113,7 @@ function createStudentCard() {
 
     // Spara och uppdatera historiken
     saveHistory();
+    renderHistory();
 }
 
 
@@ -225,5 +226,6 @@ deleteHistoryButton.addEventListener("click", function(){
 
 // - läs in och visa eventuell tidigare historik
 loadHistory();
+renderHistory();
 
 
