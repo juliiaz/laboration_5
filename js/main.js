@@ -145,30 +145,29 @@ function loadHistory() {
 function renderHistory() {
     // Rensa tidigare visad historik
     historySection.innerHTML = "";
-    history.forEach(function(studentCard){
-        
-        const article = document.createElement("article");
-        const name = document.createElement("p");
-        const email = document.createElement("p");
-        const phone = document.createElement("p");
-        const font = document.createElement("p");
-
-        name.textContent = studentCard.fullname;
-        email.textContent = studentCard.email;
-        phone.textContent = studentCard.phone;
-        font.textContent = studentCard.font;
-
-        article.appendChild(name);
-        article.appendChild(email);
-        article.appendChild(phone);
-        article.appendChild(font);
-
-        historySection.appendChild(article);
-    });
-
 
     // Skriv ut innehållet i history till DOM
-    
+    history.forEach(function(studentCard){
+        
+    const article = document.createElement("article");
+    const name = document.createElement("p");
+    const email = document.createElement("p");
+    const phone = document.createElement("p");
+    const font = document.createElement("p");
+
+    name.textContent = studentCard.fullname;
+    email.textContent = studentCard.email;
+    phone.textContent = studentCard.phone;
+    font.textContent = studentCard.font;
+
+    article.appendChild(name);
+    article.appendChild(email);
+    article.appendChild(phone);
+    article.appendChild(font);
+
+    historySection.appendChild(article);
+    });
+
 }
 
 
