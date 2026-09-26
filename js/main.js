@@ -59,7 +59,6 @@ function validateForm() {
         return true;
         } else {
         return false;
-
         }
 }
 
@@ -145,8 +144,31 @@ function loadHistory() {
  */
 function renderHistory() {
     // Rensa tidigare visad historik
+    historySection.innerHTML = "";
+    history.forEach(function(studentCard){
+        
+        const article = document.createElement("article");
+        const name = document.createElement("p");
+        const email = document.createElement("p");
+        const phone = document.createElement("p");
+        const font = document.createElement("p");
+
+        name.textContent = studentCard.fullname;
+        email.textContent = studentCard.email;
+        phone.textContent = studentCard.phone;
+        font.textContent = studentCard.font;
+
+        article.appendChild(name);
+        article.appendChild(email);
+        article.appendChild(phone);
+        article.appendChild(font);
+
+        historySection.appendChild(article);
+    });
+
 
     // Skriv ut innehållet i history till DOM
+    
 }
 
 
@@ -191,14 +213,12 @@ form.addEventListener("submit", function(event) {
 clearButton.addEventListener("click", function(){
     clearForm();
 
-    console.log("Form cleared");
 });
 
 // När användaren klickar på "Radera historik"
 deleteHistoryButton.addEventListener("click", function(){
     deleteHistory();
-
-    console.log("History deleted");
+    
 });
 
 
@@ -206,3 +226,5 @@ deleteHistoryButton.addEventListener("click", function(){
 
 // - läs in och visa eventuell tidigare historik
 loadHistory();
+
+
