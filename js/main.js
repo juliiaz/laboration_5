@@ -206,15 +206,14 @@ function deleteHistory() {
 form.addEventListener("submit", function(event) {
     event.preventDefault();
 
+// - validera inmatningen
     if (validateForm()){
+
+// - skapa studentkort om valideringen lyckas
     createStudentCard();
 }
 
 });
-
-// - validera inmatningen
-// - skapa studentkort om valideringen lyckas
-
 
 
 // När användaren klickar på "Rensa"
@@ -231,9 +230,9 @@ deleteHistoryButton.addEventListener("click", function(){
 
 
 // När sidan laddas:
+loadHistory();
 
 // - läs in och visa eventuell tidigare historik
-loadHistory();
-renderHistory();
+renderHistory(); 
 
 
