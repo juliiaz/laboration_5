@@ -1,7 +1,7 @@
 "use strict";
 /*
  * Laboration 5 - Studentkortsgenerator
- * Namn: DITT NAMN
+ * Namn: Julia Anderberg
  */
 
 // Hämta element från DOM
@@ -192,8 +192,11 @@ function clearForm() {
  */
 function deleteHistory() {
     // Radera sparad historik
+    localStorage.removeItem("history");
+    history = [];
 
     // Uppdatera history och visningen på sidan
+    renderHistory();
 }
 
 
